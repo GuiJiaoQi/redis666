@@ -1,0 +1,276 @@
+[2021-07-12 21:44:28] DEBUG org.apache.ibatis.logging.LogFactory 135 setImplementation - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2021-07-12 21:44:28] DEBUG org.mybatis.spring.SqlSessionFactoryBean 496 buildSqlSessionFactory - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[2021-07-12 21:44:28] DEBUG org.mybatis.spring.SqlSessionFactoryBean 533 buildSqlSessionFactory - Property 'mapperLocations' was not specified or no matching resources found
+[2021-07-12 21:44:28] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:28] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1951b871] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1d8062d2] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select count(*) as totalRows from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1951b871]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c435123] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@546ccad7] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select a.id,a.name,u1.name as owner,a.start_date,a.end_date,a.cost,a.description,a.create_time,u2.name as create_by,a.edit_time,u3.name as edit_by from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id WHERE a.name like '%' ? '%' and u1.name like '%' ? '%' and a.start_date>=? and a.end_date<=? order by a.create_time desc limit ?,? 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: %%(String), %%(String), 2021-06-01(String), 2021-09-12(String), 0(Integer), 10(Integer)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 0
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3c435123]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1623134f] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@2b43529a] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: SELECT a.id,a.`name`,a.start_date,a.end_date,u.`name` as `owner` FROM tbl_activity a JOIN tbl_user u on a.`owner` = u.id WHERE a.`name` LIKE '%' ? AND a.id NOT in(SELECT activity_id FROM tbl_clue_activity_relation where clue_id = ?) 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: (String), 01b41229673949f7a8196215332aaa70(String)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 4
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1623134f]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@305f7627] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@62435e70] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type where code=? 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: appellation(String)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@305f7627]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@269f4bad] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@275fe372] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 8
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@269f4bad]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@458342d3] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@36676c1a] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where login_act = ? and login_pwd = ? 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: ls(String), 44ba5ca65651b4f36f1927576dd35436(String)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@458342d3]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d098f9b] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@7e3060d8] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4d098f9b]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2692b61e] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@2e54db99] will not be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where lock_state = '1' 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 2
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2692b61e]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 130 registerSessionHolder - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67389cb8]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4bf3798b] will be managed by Spring
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:44:29] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils 188 closeSqlSession - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67389cb8]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 286 beforeCommit - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67389cb8]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 312 beforeCompletion - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67389cb8]
+[2021-07-12 21:44:29] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 317 beforeCompletion - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@67389cb8]
+[2021-07-12 21:45:19] DEBUG org.apache.ibatis.logging.LogFactory 135 setImplementation - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2021-07-12 21:45:19] DEBUG org.mybatis.spring.SqlSessionFactoryBean 496 buildSqlSessionFactory - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[2021-07-12 21:45:19] DEBUG org.mybatis.spring.SqlSessionFactoryBean 533 buildSqlSessionFactory - Property 'mapperLocations' was not specified or no matching resources found
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@3dddefd8] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select count(*) as totalRows from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4c37b5b] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select a.id,a.name,u1.name as owner,a.start_date,a.end_date,a.cost,a.description,a.create_time,u2.name as create_by,a.edit_time,u3.name as edit_by from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id WHERE a.name like '%' ? '%' and u1.name like '%' ? '%' and a.start_date>=? and a.end_date<=? order by a.create_time desc limit ?,? 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: %%(String), %%(String), 2021-06-01(String), 2021-09-12(String), 0(Integer), 10(Integer)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 0
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@50fe837a] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: SELECT a.id,a.`name`,a.start_date,a.end_date,u.`name` as `owner` FROM tbl_activity a JOIN tbl_user u on a.`owner` = u.id WHERE a.`name` LIKE '%' ? AND a.id NOT in(SELECT activity_id FROM tbl_clue_activity_relation where clue_id = ?) 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: (String), 01b41229673949f7a8196215332aaa70(String)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 4
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6e1d8f9e] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type where code=? 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: appellation(String)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@305f7627] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 8
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4763c727] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where login_act = ? and login_pwd = ? 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: ls(String), 44ba5ca65651b4f36f1927576dd35436(String)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1252b961] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4d098f9b] will not be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where lock_state = '1' 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 2
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 130 registerSessionHolder - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@34625ccd] will be managed by Spring
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:45:20] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils 188 closeSqlSession - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 286 beforeCommit - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 312 beforeCompletion - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:45:20] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 317 beforeCompletion - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:14] DEBUG org.apache.ibatis.logging.LogFactory 135 setImplementation - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2021-07-12 21:46:14] DEBUG org.mybatis.spring.SqlSessionFactoryBean 496 buildSqlSessionFactory - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[2021-07-12 21:46:14] DEBUG org.mybatis.spring.SqlSessionFactoryBean 533 buildSqlSessionFactory - Property 'mapperLocations' was not specified or no matching resources found
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@3dddefd8] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select count(*) as totalRows from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4c37b5b] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select a.id,a.name,u1.name as owner,a.start_date,a.end_date,a.cost,a.description,a.create_time,u2.name as create_by,a.edit_time,u3.name as edit_by from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id WHERE a.name like '%' ? '%' and u1.name like '%' ? '%' and a.start_date>=? and a.end_date<=? order by a.create_time desc limit ?,? 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: %%(String), %%(String), 2021-06-01(String), 2021-09-12(String), 0(Integer), 10(Integer)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 0
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@50fe837a] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: SELECT a.id,a.`name`,a.start_date,a.end_date,u.`name` as `owner` FROM tbl_activity a JOIN tbl_user u on a.`owner` = u.id WHERE a.`name` LIKE '%' ? AND a.id NOT in(SELECT activity_id FROM tbl_clue_activity_relation where clue_id = ?) 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: (String), 01b41229673949f7a8196215332aaa70(String)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 4
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6e1d8f9e] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type where code=? 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: appellation(String)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@305f7627] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 8
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4763c727] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where login_act = ? and login_pwd = ? 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: ls(String), 44ba5ca65651b4f36f1927576dd35436(String)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1252b961] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4d098f9b] will not be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where lock_state = '1' 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 2
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 130 registerSessionHolder - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@34625ccd] will be managed by Spring
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:46:15] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils 188 closeSqlSession - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 286 beforeCommit - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 312 beforeCompletion - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:15] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 317 beforeCompletion - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.LogFactory 135 setImplementation - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionFactoryBean 496 buildSqlSessionFactory - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionFactoryBean 533 buildSqlSessionFactory - Property 'mapperLocations' was not specified or no matching resources found
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@3dddefd8] will not be managed by Spring
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select count(*) as totalRows from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id 
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b7e96a]
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4c37b5b] will not be managed by Spring
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select a.id,a.name,u1.name as owner,a.start_date,a.end_date,a.cost,a.description,a.create_time,u2.name as create_by,a.edit_time,u3.name as edit_by from tbl_activity a join tbl_user u1 on a.owner=u1.id join tbl_user u2 on a.create_by=u2.id left join tbl_user u3 on a.edit_by=u3.id WHERE a.name like '%' ? '%' and u1.name like '%' ? '%' and a.start_date>=? and a.end_date<=? order by a.create_time desc limit ?,? 
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: %%(String), %%(String), 2021-06-01(String), 2021-09-12(String), 0(Integer), 10(Integer)
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 0
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1e1d3956]
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@50fe837a] will not be managed by Spring
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: SELECT a.id,a.`name`,a.start_date,a.end_date,u.`name` as `owner` FROM tbl_activity a JOIN tbl_user u on a.`owner` = u.id WHERE a.`name` LIKE '%' ? AND a.id NOT in(SELECT activity_id FROM tbl_clue_activity_relation where clue_id = ?) 
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: (String), 01b41229673949f7a8196215332aaa70(String)
+[2021-07-12 21:46:49] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 4
+[2021-07-12 21:46:49] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71b3bc45]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@6e1d8f9e] will not be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type where code=? 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: appellation(String)
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2453f95d]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@305f7627] will not be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select code, name, description from tbl_dic_type 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 8
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f071df8]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4763c727] will not be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where login_act = ? and login_pwd = ? 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: ls(String), 44ba5ca65651b4f36f1927576dd35436(String)
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54227100]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@1252b961] will not be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61bcd567]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 150 registerSessionHolder - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8] was not registered for synchronization because synchronization is not active
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@4d098f9b] will not be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where lock_state = '1' 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 2
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 193 closeSqlSession - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@56276db8]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 99 getSqlSession - Creating a new SqlSession
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 130 registerSessionHolder - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.transaction.SpringManagedTransaction 89 openConnection - JDBC Connection [com.mysql.jdbc.JDBC4Connection@34625ccd] will be managed by Spring
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==>  Preparing: select id, login_act, name, login_pwd, email, expire_time, lock_state, dept_no, allow_ips, create_time, create_by, edit_time, edit_by from tbl_user where id = ? 
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - ==> Parameters: 06f5fc056eac41558a964f96daa7f27c(String)
+[2021-07-12 21:46:50] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger 145 debug - <==      Total: 1
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils 188 closeSqlSession - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 286 beforeCommit - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 312 beforeCompletion - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
+[2021-07-12 21:46:50] DEBUG org.mybatis.spring.SqlSessionUtils$SqlSessionSynchronization 317 beforeCompletion - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a66a204]
